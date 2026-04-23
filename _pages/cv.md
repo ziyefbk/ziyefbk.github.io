@@ -35,6 +35,25 @@ Research Experience
   * 经基准测试对比，Rust 实现较原 C++ 版本提速约 40%
   * 发现原代码中存在的区间分析 bug，已与原作者沟通确认
 
+## Linux 内核开源贡献
+======
+* **[bpf: Add bitwise tracking for BPF_END](https://github.com/kernel-patches/bpf/commit/9d21199842247ab05c675fb9b6c6ca393a5c0024)** | upstream kernel
+  * 为 BPF_END（字节序转换）指令实现了 bitwise tracking（tnum 分析），增强 BPF verifier 在处理网络协议代码时的验证能力
+  * 合入 Linux 内核主线 [Linux 6.14](https://cdn.kernel.org/pub/linux/kernel/v6.14/)
+
+* **[bpf: Add range tracking for BPF_DIV and BPF_MOD](https://github.com/kernel-patches/bpf/commit/44fdd581d27366092e162b42f025d75d5a16c851)** | upstream kernel
+  * 为 BPF_DIV 和 BPF_MOD 指令实现了区间分析，减少 BPF verifier 对安全代码的误判
+  * 合入 Linux 内核主线 [Linux 6.14](https://cdn.kernel.org/pub/linux/kernel/v6.14/)
+
+* **[bpf: Reject negative offsets for ALU ops](https://github.com/kernel-patches/bpf/commit/55c0ced59fe17dee34e9dfd5f7be63cbab207758)** | upstream kernel
+  * 修复了 BPF verifier 中 ALU 指令偏移量检查的缺陷，拒绝负数偏移以防止越界访问
+
+* **[bpf: Reset register ID for BPF_END value tracking](https://github.com/kernel-patches/bpf/commit/a3125bc01884431d30d731461634c8295b6f0529)** | upstream kernel
+  * 修复了 BPF_END 操作后寄存器 scalar ID 未正确重置导致 verifier 边界推导错误的问题
+
+* **[bpf: Fix out-of-bounds read in bpf_patch_call_args()](https://lore.kernel.org/bpf/03aec17f262c5c9f1d8b2d1747b2c795a93db7a9.camel@gmail.com/)** | upstream kernel
+  * 修复了 bpf_patch_call_args() 函数中的越界读取问题，提升内核安全性
+
 Projects
 ======
 * **计算机视觉与深度神经网络研究** | 2025.04 -- 2025.08
