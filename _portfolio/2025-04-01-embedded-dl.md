@@ -17,3 +17,8 @@ collection: portfolio
 - 在自采多类别动作数据集上达 97.3% 识别准确率
 - 优化模型参数量并部署至上位 PC 机完成动作识别
 - 驱动电机完成机器狗指定动作指令
+
+### 相关文档
+
+- [实验报告 (PDF)]({{ site.baseurl }}/files/report.pdf)
+- [项目展示 (PPTX)]({{ site.baseurl }}/files/slide.pptx)

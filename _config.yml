@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "zh-CN"
-site_theme               : "default"
+site_theme               : "mint"
 title                    : "Cao Tianci"
 title_separator          : "-"
 name                     : &name "曹天赐"
